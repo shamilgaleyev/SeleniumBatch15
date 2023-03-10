@@ -22,10 +22,16 @@ public class Task2 {
         driver.get("http://practice.syntaxtechs.net/basic-checkbox-demo.php");
 
         List<WebElement> options = driver.findElements(By.cssSelector("input[class$='element']"));
-        for (WebElement option : options) {
-            String checkbox = option.getAttribute("value");
-            if(checkbox.equals("Option-4")){
-                option.click();
+//        for (WebElement option : options) {
+//            String checkbox = option.getAttribute("value");
+//            if(checkbox.equals("Option-4")){
+//                option.click();
+//            }
+
+            for (int i = 0; i < options.size(); i++) {
+                String value = options.get(i).getAttribute("value");
+                if (value.equalsIgnoreCase("Option-4")){
+                    options.get(i).click();
             }
         }
 
