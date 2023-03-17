@@ -24,7 +24,9 @@ public class Task1 {
            String title = driver.getTitle();
            if(title.equalsIgnoreCase("Privacy Policy – Privacy & Terms – Google")){
                break;
+
            }
+           Thread.sleep(2000);
         }
         System.out.println(driver.getTitle());
         driver.switchTo().window(parentWindowHamdle);
